@@ -8,8 +8,8 @@ try:
     numIn = int(input("Give me a number please: "))
 
     # print the first number with an amount of blocks equal to it
-    print('▉' * numIn, end=' - ')
-    print(numIn)
+    print(numIn, end=' - ')
+    print('▉' * numIn)
 
     # check if number is 1
     while numIn != 1:
@@ -18,8 +18,8 @@ try:
             # floor divide in half
             numIn = numIn // 2
             # print number with an amount of blocks equal to it then pause for 1/10 of a second
-            print('▉' * numIn, end=' - ')
-            print(numIn)
+            print(numIn, end=' - ')
+            print('▉' * numIn)
             time.sleep(0.1)
         
         # check if number is odd (just for fun)
@@ -27,8 +27,8 @@ try:
             # multiply number by 3, then add 1
             numIn = 3 * numIn + 1
             # print number with an amount of blocks equal to it then pause for 1/10 of a second
-            print('▉' * numIn, end=' - ')
-            print(numIn)
+            print(numIn, end=' - ')
+            print('▉' * numIn)
             time.sleep(0.1)
 
         # should be impossible, but otherwise say what?
