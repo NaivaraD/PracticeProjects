@@ -43,4 +43,4 @@ except KeyboardInterrupt:
 except ValueError:
     print("That was not a number, goodbye")
     time.sleep(0.5)
-    sys.exit
+    sys.exit()
