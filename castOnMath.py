@@ -55,7 +55,7 @@ multiplespin.pack(side = 'left', padx = 5)
 multipleFrame.pack()
 
 # Non-Multiple Repeats
-nMultInt = tk.IntVar(value = 1)
+nMultInt = tk.IntVar(value = 0)
 nMultFrame = ttk.Frame(window)
 nMultLabel = ttk.Label(
     nMultFrame,
@@ -64,7 +64,7 @@ nMultLabel = ttk.Label(
     )
 nMultspin = ttk.Spinbox(
     nMultFrame,
-    from_ = 1,
+    from_ = 0,
     to = 50,
     textvariable = nMultInt
     )
@@ -73,7 +73,7 @@ nMultspin.pack(side = 'left', padx = 5)
 nMultFrame.pack()
 
 # Border
-borderInt = tk.IntVar(value = 1)
+borderInt = tk.IntVar(value = 0)
 borderFrame = ttk.Frame(window)
 borderLabel = ttk.Label(
     borderFrame,
@@ -82,7 +82,7 @@ borderLabel = ttk.Label(
     )
 borderspin = ttk.Spinbox(
     borderFrame,
-    from_ = 1,
+    from_ = 0,
     to = 50,
     textvariable = borderInt
     )
