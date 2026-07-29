@@ -1,41 +1,75 @@
 import sys
 
 def chains():
-    multiple = int(input("What is the multiple of your pattern: "))
-    nMultRepeat = int(input("What is your turning chain: "))
-    border = int(input("How many total stitches in your border: "))
-    repeats = int(input("How many repeats might you want: "))
-    
-    test = (multiple*repeats)+nMultRepeat+border
-    
-    print(f"You want to chain {test} stitches!")
+    while True:
+        multiple = int(input("What is the multiple of your pattern: "))
+        nMultRepeat = int(input("What is your turning chain: "))
+        border = int(input("How many total stitches in your border: "))
+        repeats = int(input("How many repeats might you want: "))
+        
+        test = (multiple*repeats)+nMultRepeat+border
+        
+        print(f"You want to chain {test} stitches!")
+
+        leave = input('would you like to use this calculator again? Y/N: ').lower()
+
+        if leave == 'n':
+            break
 
 def castOn():
-    multiple = int(input("What is the multiple of your pattern: "))
-    nMultRepeat = int(input("What is your buffer number: "))
-    border = int(input("How many total stitches in your border: "))
-    repeats = int(input("How many repeats might you want: "))
+    while True:
+        multiple = int(input("What is the multiple of your pattern: "))
+        nMultRepeat = int(input("What is your buffer number: "))
+        border = int(input("How many total stitches in your border: "))
+        repeats = int(input("How many repeats might you want: "))
 
-    test = (multiple*repeats)+nMultRepeat+border
+        test = (multiple*repeats)+nMultRepeat+border
 
-    print(f"You want to cast on {test} stitches!")
+        print(f"You want to cast on {test} stitches!")
+
+        leave = input('would you like to use this calculator again? Y/N: ').lower()
+
+        if leave == 'n':
+            break
 
 def yardage():
-    bundleSize = int(input("How many strands in your bundles: "))
-    bundles = int(input("How many full bundles: "))
-    bonusBundle = int(input("How many strands in your spare bundle: "))
-    yards = int(input("How many yards is your niddy noddy set to: "))
+    while True:
+        bundleSize = input("How many strands in your bundles (defaults to 25): ")
+        bundles = input("How many full bundles: ")
+        bonusBundle = input("How many strands in your spare bundle: ")
+        yards = input("How many yards is your niddy noddy set to (defaults to 2): ")
 
-    test = ((bundleSize*bundles)+bonusBundle)*yards
+        if bundleSize == '':
+            bundleSize = 25
 
-    print(f"You have ~{test} yards!")
+        if yards == '':
+            yards = 2
+
+        bundleSize = int(bundleSize)
+        bundles = int(bundles)
+        bonusBundle = int(bonusBundle)
+        if '.' in yards:
+            yards = float(yards)
+
+        else:
+            yards = int(yards)
+
+        test = ((bundleSize*bundles)+bonusBundle)*yards
+
+        print(f"You have ~{test} yards!")
+
+        leave = input('would you like to use this calculator again? Y/N: ').lower()
+
+        if leave == 'n':
+            break
 
 choice = input('''Welcome to Navi's Fiber Calculator!
 I presently have three calculators made, those being:
 [Crochet]: To calculate how many chains when making an item from a repeating stitch.
 [Knit]: Same as crochet, but for casting on.
 [Spinning]: To calculate the yardage you have on your niddy noddy.
-Please pick C/K/S and enjoy not doing as much math!
+[Exit]: Not a calc, but an easy exit to the program.
+Please pick C/K/S/E and enjoy not doing as much math!
 => ''').lower()
 
 while True:
@@ -51,9 +85,4 @@ while True:
     if choice == 'e' or choice == 'exit':
         sys.exit()
 
-    response = input("Would you like exit? Y/N: ").upper()
-
-    if response == "Y":
-        sys.exit()
-
-    choice = input("c/k/s/e: ").lower()
+    choice = input("C/K/S/E: ").lower()
